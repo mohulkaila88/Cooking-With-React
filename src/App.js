@@ -5,11 +5,13 @@ import CounterHooks from './CounterHooks'
 export const ThemeContext = React.createContext()
 
 function App() {
-  const[theme, setTheme] = useState('red')
+  const[theme, setTheme] = useState('green')
   return ( 
   <>
     <ThemeContext.Provider value={{ backgroundColor: theme}}>
+      Counter
       <Counter initialCount = {0} />
+      Counter Hooks
       <CounterHooks initialCount = {0} />
       <button onClick={() => setTheme(prevTheme => prevTheme ==='red' ? 'blue' : 'red')}>Toggle Theme</button>
     </ThemeContext.Provider>
